@@ -4,10 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Tarefa {
+
 	@Id
-	@GeneratedValue
+	@GenericGenerator(name = "SequenceStyleGenerator",
+					  strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator")
+	@GeneratedValue(generator="SequenceStyleGenerator")
 	private int id;
 	private String nome;
 	private boolean status;
@@ -30,4 +35,5 @@ public class Tarefa {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 }
