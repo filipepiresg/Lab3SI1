@@ -11,7 +11,7 @@ public class Tarefa {
 
 	@Id
 	@GenericGenerator(name = "SequenceStyleGenerator",
-					  strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator")
+			  strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator")
 	@GeneratedValue(generator="SequenceStyleGenerator")
 	private int id;
 	private String nome;
