@@ -1,4 +1,4 @@
-package br.SistemasDaInformacao.Laboratorio;
+package br.lab3.SI1;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -10,3 +10,4 @@ public class Lab3Si1Application {
 		SpringApplication.run(Lab3Si1Application.class, args);
 	}
 }
+ 

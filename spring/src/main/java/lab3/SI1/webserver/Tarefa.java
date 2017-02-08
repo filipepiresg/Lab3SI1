@@ -1,5 +1,7 @@
 package lab3.SI1.webserver;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,8 +9,10 @@ import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Tarefa {
-
+public class Tarefa implements Serializable{
+	
+	@GeneratedValue
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GenericGenerator(name = "SequenceStyleGenerator",
 			  strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator")

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="TODOList">
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<script src="./libs/angular.min.js"></script>
+<head>
+<title>TO DO List w/ Spring Boot</title>
+</head>
+
+<header id="cabecalho">
+	<h1 style="margin: 0; padding: 20px 0 0 0; border: 1px">To-Do list</h1>
+	<input type="text" ng-model="novaTarefa.nome"
+		placeholder="Digite sua tarefa..." />
+	<button ng-click="addTarefa()">add</button>
+</header>
+
+<body id="corpo" ng-controller="listaCtrl">
+	<div class="listaConcluida">
+		<ul ng-repeat="tarefa in tarefasConcluidas">
+			<li><span class="colocar" ng-click="mvTarefaConc(tarefa)">&#10003;</span>
+				{{tarefa.nome}} <span class="retirar"
+				ng-click="rmvTarefaConc(tarefa)">&times;</span></li>
+		</ul>
+		Quant. tarefas concluídas: {{tarefasConcluidas.length}}
+	</div>
+	<div class="listaNaoConcluida">
+		<ul ng-repeat="tarefa in tarefasNaoConcluidas">
+			<li><span class="colocar" ng-click="mvTarefaNConc(tarefa)">&#10003;</span>
+				{{tarefa.nome}} <span class="retirar"
+				ng-click="rmvTarefaNConc(tarefa)">&times;</span></li>
+		</ul>
+		Quant. tarefas Não concluídas: {{tarefasNaoConcluidas.length}}
+	</div>
+	<!-- <div class="footer">
+	</div> -->
+	<footer>
+		<h5 style="text-align: center;">Concluídas (%):
+			{{(tarefasConcluidas.length*100)/(tarefasConcluidas.length+tarefasNaoConcluidas.length)}}</h5>
+		<button onclick="mudarCor()">random color</button>
+		<button onclick="mudarFonte()">random font</button>
+		<button ng-click="zerarListas()">clear lists</button>
+		<button onclick="novaPagina()" id="pagina" value="1">contato</button>
+	</footer>
+</body>
+
+<script src="./js/main.js"></script>
+</html>
